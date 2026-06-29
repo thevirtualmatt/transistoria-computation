@@ -1,0 +1,35 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>vCore-Toolkit - VM</title>
+        <link rel="stylesheet" href="style.css"></link>
+        <script defer src="script.js"></script>
+    </head>
+
+    <body>
+        <div id=VM>
+            <p id="pc">PC: 0</p>
+            <div id="regs">
+                <p>in: 0</p>
+                <p>A: 0</p>
+                <p>B: 0</p>
+                <p>C: 0</p>
+                <p>D: 0</p>
+                <p>E: 0</p>
+                <p>F: 0</p>
+                <p>out: 0</p>
+            </div>
+            <div id="byteholder">
+                <canvas id="byte"></canvas>
+            </div>
+            <div id="buttons">
+                <button id="step" onclick="cpu.step(true)">STEP</button>
+                <button id="reset" onclick="cpu.reset()">RESET</button>
+                <input type="range" id="speed" min="0" max="5000" value="1250">
+                <button id="power" onclick="cpu.toggle()">ON/OFF</button>
+            </div>
+        </div>
+        <input type="file" id="fileInput" onchange="readFile(event)">
+    </body>
+</html>
